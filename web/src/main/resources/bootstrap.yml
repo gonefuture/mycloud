@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: web
+  cloud:
+    config:
+      uri: http://39.108.88.129:8888
+      profile: dev
+  rabbitmq:
+    addresses: amqp://39.108.88.129:5672
+    username: gonefuture
+    password: gonefuture

@@ -1,0 +1,28 @@
+﻿.update{
+    display:none;
+    position: fixed;
+    top:24%;
+    left:35%;
+    width: 500px;
+    z-index: 10;
+    background: rgba(75, 216, 171, 0.9);
+    box-shadow: 2px 2px 5px #646464;
+    padding: 20px 0px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+}
+.update .inputGroup{
+    margin-top:3%;
+    
+}
+.update .inputGroup button{
+    
+    margin-top:3%;
+    outline:none;
+    border:none;
+    cursor: pointer;
+}
+.update input{
+    margin-left: 2%;
+}

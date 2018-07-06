@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gonefuture/spring-cloud-config-repo
+          username: gonefuture
+          password: gone1135816685
+  rabbitmq:
+    addresses: amqp://39.108.88.129:5672
+    username: gonefuture
+    password: gonefuture
+
+
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://120.77.250.250:30002/eureka/
+
+
+debug: true
+#日志等级
+logging:
+  level: debug
+
+
+encrypt:
+  failOnError: false

@@ -1,0 +1,18 @@
+
+server:
+  port: 30002
+
+spring:
+  application:
+    name: disconvery
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
+
+

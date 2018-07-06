@@ -1,0 +1,28 @@
+﻿.inputGroup{
+    margin-top:3%;
+    
+}
+.inputGroup button{
+    
+    margin-top:3%;
+    outline:none;
+    border:none;
+    cursor: pointer;
+}
+input{
+    margin-left: 22px;
+    width: 174px;
+}
+select{
+    margin-left: 17px;
+    width: 174px;
+}
+
+textarea{
+	resize:none;
+	overflow:scroll;
+	text-indent:40px;
+	letter-spacing: 3px;
+	width:98%;
+	height:360px;
+}

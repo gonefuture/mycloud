@@ -1,0 +1,16 @@
+﻿.leftMoney ul{
+    list-style-type: none;
+}
+
+.leftMoney ul li{
+    margin-top:8%;
+    font-size:13px;
+}
+.leftMoney a:hover{
+    text-decoration: underline;
+}
+
+.rightTable a:hover{
+    text-decoration: underline;
+    
+}

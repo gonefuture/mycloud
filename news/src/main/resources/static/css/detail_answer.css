@@ -1,0 +1,61 @@
+﻿.rightTable div{
+    border: 1px solid #f0f0f0;
+
+}
+.rightTable{
+    padding: 50px;
+    
+}
+.anBig{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+}
+.anBig_header{
+    width: 100%;
+    height: 7%; 
+    float: left;
+    padding: 1% 0%;
+    
+}
+.anBig_aside{
+    width:20%;
+    height:41%;
+    float: left;
+    color: #333;
+}
+.anBig_aside_top{
+    width: 100%;
+    height: 13%;
+    background: #f0f0f0;
+    padding: 3% 0%;
+    
+}
+.anBig_aside_btm{
+    width: 100%;
+    height: 87%;
+    background: #f0f0f0;
+    padding: 45% 0%; 
+    
+}
+.anBig_aside_r{
+    width:80%;
+    height:41%;
+    float: left;
+    color: #333;
+}
+.anBig_aside_r_top{
+    width: 100.3%;
+    height: 13%;
+    background: #fff;
+    text-align: left;
+    padding: 1% 0%;
+}
+.anBig_aside_r_btm{
+    width: 100.3%;
+    height: 87%;
+    background: #fff;
+    text-align: left;
+    letter-spacing: 3px;
+    padding: 2% 0%;
+}

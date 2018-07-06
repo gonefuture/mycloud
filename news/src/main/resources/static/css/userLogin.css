@@ -1,0 +1,243 @@
+﻿*{
+	
+	box-sizing:border-box;                /*确保边距和边框包含在元素的宽度和高度间。*/
+}
+html {
+    /*font-family: "Lucida Sans", sans-serif;*/
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.loginDiv{
+	width: 30%;
+	padding: 30px 50px;
+	border-radius: 10px;
+	background:rgba(187, 227, 232, 0.27);
+	min-width: 420px;
+}
+.coverImage {
+	width: 100%;
+	height: 100%;
+	max-width:2000px;
+	max-height:1280px;
+	min-width:550px;
+	
+}
+@media only screen and (min-width: 768px) {/*平板，电脑*/ 
+.loginDiv{
+	
+	margin-left:60%;
+	margin-top:10%;
+	display:none;
+	
+}
+
+.coverImage{
+	/*background: -webkit-linear-gradient(to right, rgb(71, 97, 59),#19e4bd ); /* Safari 5.1 - 6.0 
+    background: -o-linear-gradient(to right, rgb(71, 97, 59)  ,#19e4bd ); /* Opera 11.1 - 12.0 
+   	background: -moz-linear-gradient(to right, rgb(71, 97, 59) ,#19e4bd ); /* Firefox 3.6 - 15 
+    background: linear-gradient(to right, rgb(71, 97, 59)  ,#19e4bd); /* 标准的语法（必须放在最后） */
+	background: #428237;
+}
+
+}
+@media only screen and (max-width: 768px){  /*手机css*/
+.loginDiv{
+	
+	margin-left:2%;
+	margin-top:100px;
+	display:none;
+
+}
+.coverImage{
+	background: #428237;
+}
+
+}
+
+.input-ri{                                         
+	
+	font-size:15px;
+	width:60%;
+	height:100%;
+	border-radius:0px 15px 15px 0px ;
+	-webkit-border-radius:0px 15px 15px 0px ;
+	transition:all 0.5s;
+	float:left;
+	border: none;
+	text-indent: 15px;
+	
+}
+.cls{
+	
+	outline:none;
+	
+}
+.input-le{                                          
+	
+	font-size:15px;
+	width:60%;
+	height:100%;
+	border-radius:15px 0px 0px 15px ;
+	-webkit-border-radius:15px 0px 0px 15px ;
+	border:2px solid #D8D8D8;
+	transition:all 0.5s;
+	float:left;
+	border: none;
+	text-indent: 15px;
+	
+}
+.input{
+	font-size:15px;
+	width:100%;
+	height:40px;
+	border-radius:15px ;
+	-webkit-border-radius:15px ;
+	border:2px solid #e4e2cf;
+	transition:all 0.5s;
+	text-indent: 15px;
+}
+
+[class*="input"]:focus{                      
+
+	background: #f0f0f0;
+	
+}
+.input-group{                     
+
+	width:400px;
+	height:40px;
+	margin-top:25px;
+}
+.icon-le{                            
+
+	width:20%;
+	float:left;
+	border-radius:15px 0px 0px 15px;
+	-webkit-border-radius:15px 0px 0px 15px;
+	text-align:center;
+	padding:2.4% 1%;
+	font-size:15px;
+	height:40px;
+	background: #fff;
+}
+.icon-ri{                           
+
+	width:20%;
+	float:left;
+	background-color:#fff;
+	-webkit-border-radius:0px 15px 15px 0px;
+	border-radius:0px 15px 15px 0px;
+	border:2px 0px 2px 2px solid #FFCC33;
+	text-align:center;
+	padding:2.4% 1%;
+	color:#ffffff;
+	cursor:pointer;
+	font-size:15px;
+	height:40px;
+}
+
+.icon-ri:hover{
+	
+	background-color:#F1C00E;
+	color: #fff;
+	
+}
+.button {
+  display: inline-block;
+  border-radius: 15px;
+  background-color:  #C0C0C0 ;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size:15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+ 
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button3 {
+    position: relative;
+    background-color: #E28E0F;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;         /*  过渡时间关键*/
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+	
+  	
+}
+.button3:hover{
+	
+	  background-color: #F1C00E;
+	
+	
+}
+.button3:after {          
+    content: "";                  /* 在button3后紧接着插入的内容为空*/
+    background: #fff;           /* 设置波纹颜色*/
+    display: block;              
+    position: absolute;             
+    padding-top: 300%;             
+    padding-left: 350%;            
+    margin-left: -20px!important;
+    margin-top: -120%;               
+    opacity: 0;                     /* 透明度是关键*/
+    transition: all 0.8s              /* 波纹过渡时间关键*/
+}
+
+.button3:active:after {
+    padding: 0;                             /* 点击（活动） 设置消失关键*/
+    margin: 0;                
+    opacity: 1;                           
+    transition: 0s
+}
+.shadow{
+	box-shadow:1px 2px 4px #f0f0f0;
+	
+}
+
+.link{
+	padding:0px 30%;
+	text-decoration:none;
+	color:#fff;
+	text-align:center;
+}
+.link:hover{
+	
+	text-decoration:underline;
+	
+}

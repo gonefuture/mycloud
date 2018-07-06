@@ -1,0 +1,76 @@
+server:
+  port: 80
+    ##项目contextPath，一般在正式发布版本中，我们不配置
+  context-path: /iot
+  tomcat:
+      uri-encoding: UTF-8
+
+spring:
+  application:
+    name: IOT-SERVICE
+  jmx:
+    default-domain: IOT-SERVICE
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/football?characterEncoding=utf8
+  #url: jdbc:mysql://192.168.0.1:3306/test?characterEncoding=utf8
+    username: root
+    password: 123
+  #以下为连接池的相关参数配置
+    dbcp2:
+      max-idle: 10
+      min-idle: 5
+      initial-size: 5
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 18800
+
+    tomcat:
+        max-wait: 10000
+
+  jpa:
+    database: MYSQL
+    show-sql: true
+    ## Hibernate ddl auto (validate|create|create-drop|update)
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+debug: true
+#日志等级
+logging:
+  level: debug
+
+#eureka注册
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:30002/eureka/
+    instance:
+      #hostname: localhost
+      preferIpAddress: true
+      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+
+#图片下载地址
+#custom:
+#    tmpLocation: D:/ImageDownload
+
+
+myconfig: aaa
+
+
+
+

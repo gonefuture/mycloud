@@ -1,0 +1,9 @@
+﻿.rightTable td{
+    width: 50%;
+}
+.rightTable td span{
+    font-size: 15px;
+    font-weight: 700px;
+    margin-left: -200px;
+    
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>物联网中心*温度湿度传感器</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/vue.js"></script>
+    <script>
+        window.onload=function(){
+
+
+
+            const URL = "/api/iot/temhum/show";
+            var app = new Vue({
+                el:'#box',
+                data:{
+                    createtime: 0,
+                    temperature:0,
+                    humidity:0
+                },
+                methods:{
+                    add:function(){
+                        fetchData.bind(this);
+                        fetchData();
+                    }
+                },
+
+                created: function () {
+                    fetchData.call(this);
+                }
+            });
+
+            async function fetchData() {
+                try {
+                    // 注意这里的await语句，其所在的b函数必须有async关键字声明
+                    let response = await fetch(URL);
+                    let responseJson = await response.json();
+                    this.createtime = new Date(responseJson.createtime).toLocaleString();
+                    this.temperature = responseJson.temperature;
+                    this.humidity = responseJson.humidity;
+
+                } catch(error) {
+                    console.error(error);
+                }
+            }
+
+            var timer = setInterval(function () {
+                  fetchData.call(app);
+            },5000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container" id="box">
+        <div class="page-header">
+            <h1>物联网中心
+                <small>温度湿度传感器</small>
+            </h1>
+        </div>
+        <p>通过蓝牙,安卓系结点获取温湿度传感结点的信息,使用restful风格的http请求发送到服务端</p>
+
+        <br/>
+
+        <table class="table table-bordered table-hover">
+            <caption class="h3 text-info">物联网</caption>
+            <tr class="text-danger">
+                <th class="text-center">记录时间</th>
+                <th class="text-center">温度</th>
+                <th class="text-center">湿度</th>
+                <th class="text-center">操作</th>
+            </tr>
+            <tr class="text-center" >
+                <td>{{createtime}}</td>
+                <td>{{temperature}}</td>
+                <td>{{humidity}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#layer" v-on:click="add">刷新</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>
